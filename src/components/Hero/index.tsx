@@ -54,7 +54,7 @@ const Hero = () => {
       </div>
 
 
-      <div className=" py-6  sm:py-8 lg:py-12 px-8 sm:px-12 md:px-20 bg-[#f3f3f3] ">
+      <div className=" py-6 sm:py-8 lg:py-12 px-8 sm:px-12 md:px-20 bg-[#f3f3f3] ">
         <div className="">
           <section className="flex flex-col justify-center gap-6 sm:gap-4
            lg:flex-row">
@@ -99,9 +99,7 @@ const Hero = () => {
               </div>
             </div>
 
-
-
-            <div className=" py-10 h-[640px] w-[500px] overflow-hidden justify-center items-start">
+            <div className=" py-10  overflow-hidden justify-center items-start">
               <img
                 src="/images/violet.png"
                 loading="lazy"
@@ -117,14 +115,6 @@ const Hero = () => {
 
       </div>
 
-      <div className='bg-black h-[90px] mb-20'>
-        <img src="/images/curva.svg" alt="imagem" className='bg-purple-950 w-full z-10' />
-      </div>
-      <div className=" h-screen w-screen">
-        <div className="bg-blue-500 w-full h-full rounded-full overflow-hidden">
-          {/* Conteúdo da div aqui */}sadas
-        </div>
-      </div>
     </>
   );
 };

@@ -52,14 +52,14 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 w-full z-20 text-violet-950 
+    <header className={`fixed top-0 w-full z-20 text-violet-950 justify-center h-[80px]
     ${scrollingDown ? 'transition-colors duration-600 bg-black' : ''}`}
     >
       <nav className="flex justify-between items-center py-1 px-24 md:mx-5 ">
         <div className="flex items-center gap-5">
           <Link href="/">
             <img
-              className={`object-cover object-center rounded w-40 h-full
+              className={`object-cover object-center rounded w-[80px] h-[80px]
                transition-opacity duration-300 ${!scrollingDown ?
                   "opacity-100" : "opacity-0"
                 } md:opacity-100`}
@@ -68,7 +68,7 @@ const Header = () => {
             />
           </Link>
           <div className="hidden md:flex gap-10 font-bold border-l-[2px]
-           border-violet-950 text-white  text-4xl pl-10">
+           border-violet-950 text-white  text-xl pl-10">
             <Link
               href="/about"
               className="hover:text-violet-800 hover:scale-125"
