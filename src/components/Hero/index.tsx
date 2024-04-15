@@ -32,7 +32,7 @@ const Hero = () => {
          mx-auto bg-black bg-opacity-95">
           <div className=" text-white font-extrabold z-10">
             <div className="space-y-3 p-10 sm:p-15 md:p-20 xl:pl-[100px] pr-[30px] text-left xl:max-w-[70%]">
-              <h1 className="text-7xl sm:text-8xl
+              <h1 className="text-5xl sm:text-6xl
                text-white font-bold opacity-100">
                 Aumente suas
                 <br /><span className='text-purple-700 '>vendas </span>
