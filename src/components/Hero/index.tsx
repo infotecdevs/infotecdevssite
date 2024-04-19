@@ -25,11 +25,11 @@ const Hero = () => {
             autoPlay
             muted
             loop
-            className="w-full h-full object-cover opacity-60"
+            className="w-full h-full object-cover opacity-90"
           />
         </div>
         <div className="relative grid grid-cols-1 place-items-center h-screen
-         mx-auto bg-black bg-opacity-95">
+         mx-auto bg-black bg-opacity-90">
           <div className=" text-white font-extrabold z-10">
             <div className="space-y-3 p-10 sm:p-15 md:p-20 xl:pl-[100px] pr-[30px] text-left xl:max-w-[70%]">
               <h1 className="text-5xl sm:text-6xl

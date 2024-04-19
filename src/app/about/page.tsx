@@ -11,11 +11,13 @@ import { BiSolidBinoculars } from "react-icons/bi";
 
 import Image from "next/image";
 import Footer from '@/components/Footer/Index';
+import AboutUs from '@/components/AboutUs';
 
 const page = () => {
   return (
     <>
-      <section id="sobre" className="container mx-auto py-10 px-4">
+
+      <section id="sobre" className="container mx-auto py-[10rem] px-4">
         <div className="text-violet-950 text-[32px] font-medium flex items-center gap-2 py-4">
           Sobre nós
           <div className="bg-violet-950 h-[2px] w-[40px]"></div>
@@ -68,7 +70,7 @@ const page = () => {
                 <div>Cotia-SP</div>
               </div>
             </div>
-            <div className="max-w-[800px]">
+            <div className="max-w-[800px] pt-20">
               <h2 className="font-bold mt-8 mb-4 text-violet-950 text-2xl">
                 Desenvolvedores Frontend e Backend
               </h2>
@@ -89,8 +91,8 @@ const page = () => {
           </div>
         </div>
       </section>
-      <div className="grid grid-cols-1 lg:grid-cols-2 bg-violet-900 py-12 w-full">
-        <div className="flex flex-col font-medium gap-2 items-center  text-center m-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 bg-violet-900 py-12 w-full sm:px-[5rem] md:px-[10rem] xl:px-[15rem]">
+        <div className="flex flex-col font-medium gap-2 items-center  max-w-[500px] text-center m-10">
           <h1 className="text-white text-3xl font-medium gap-2">Missão</h1>
           <span className="text-white  text-6xl gap-2 py-1">
             <TbTargetArrow />
@@ -102,7 +104,7 @@ const page = () => {
             promovam eficiência e excelência.
           </p>
         </div>
-        <div className="flex flex-col font-medium gap-2 items-center  text-center m-10">
+        <div className="flex flex-col font-medium gap-2 items-center max-w-[500px] text-center m-10">
           <h1 className="text-white text-3xl font-medium gap-2">Visão</h1>
           <span className="text-white text-6xl gap-2 py-1">
             <BiSolidBinoculars />
@@ -115,7 +117,7 @@ const page = () => {
           </p>
         </div>
       </div>
-      <div className="grid grid-cols-1 bg-white py-12 ">
+      <div className="grid grid-cols-1 bg-white py-12 px-[5rem]">
         <div className="flex flex-col items-center font-medium gap-2 text-center">
           <h1 className="text-violet-800 text-3xl font-medium flex items-center gap-2 py-1">
             Valores
@@ -123,56 +125,10 @@ const page = () => {
           <span className="text-violet-800 text-6xl gap-2 py-1">
             <FaHandHoldingHeart />
           </span>
-          <ul className="text-gray-900 font-semibold">
-            <li className=" p-2">
-              <span className="text-violet-900 text-bold md:text-2xl">
-                Inovação:{" "}
-              </span>
-              Buscamos constantemente novas abordagens e soluções criativas para
-              superar desafios e antecipar as necessidades do mercado.
-            </li>
 
-            <li className="p-2">
-              <span className="text-violet-900 text-bold md:text-2xl">
-                Excelência:
-              </span>{" "}
-              Comprometemo-nos com altos padrões de qualidade em nossos
-              produtos, serviços e relacionamentos profissionais.
-            </li>
+          <AboutUs />
 
-            <li className="p-2">
-              <span className="text-violet-900 text-bold md:text-2xl">
-                Colaboração:
-              </span>{" "}
-              Fomentamos um ambiente de trabalho inclusivo e colaborativo, onde
-              a diversidade de ideias e experiências é valorizada.
-            </li>
 
-            <li className="p-2">
-              <span className="text-violet-900 text-bold md:text-2xl">
-                Integridade:
-              </span>{" "}
-              Agimos com honestidade e ética em todas as interações, mantendo a
-              transparência em nossas práticas comerciais.
-            </li>
-
-            <li className="p-2">
-              <span className="text-violet-900 text-bold md:text-2xl">
-                Compromisso com o Cliente:{" "}
-              </span>{" "}
-              Colocamos os interesses dos clientes em primeiro lugar, buscando
-              entender suas necessidades e superar suas expectativas.
-            </li>
-
-            <li className="p-2">
-              <span className="text-violet-900 text-bold md:text-2xl">
-                Responsabilidade Social e Ambiental:{" "}
-              </span>{" "}
-              Comprometemo-nos a agir de maneira social e ambientalmente
-              responsável, contribuindo positivamente para as comunidades em que
-              operamos.
-            </li>
-          </ul>
         </div>
       </div>
       <Footer />
