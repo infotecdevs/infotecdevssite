@@ -59,7 +59,7 @@ const Header = () => {
         <div className="flex items-center gap-5 justify-center object-center">
           <Link href="/">
             <h1 className='text-3xl md:text-4xl xl:text-5xl font-bold text-white hover:bg-gradient-to-r
-             from-violet-700 via-purple-600 to-blue-500 via-blue-600 to-blue-500 bg-clip-text 
+             from-purple-600 via-purple-500 to-blue-500 bg-clip-text 
              hover:text-transparent hover:scale-125  duration-500 transition-all'
 
             >InfotecDevs</h1>
