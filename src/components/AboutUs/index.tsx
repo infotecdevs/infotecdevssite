@@ -1,4 +1,9 @@
-import React from 'react';
+"use client"
+import React, { useState, useEffect, useRef } from 'react';
+import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
+
+
 
 const AboutUs = () => {
   const values = [
@@ -28,14 +33,66 @@ const AboutUs = () => {
     },
   ];
 
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const intervalRef = useRef(null);
+
+  const nextSlide = () => {
+    setCurrentSlide((prevSlide) => (prevSlide === values.length - 1 ? 0 : prevSlide + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prevSlide) => (prevSlide === 0 ? values.length - 1 : prevSlide - 1));
+  };
+
+  const startAutoPlay = () => {
+    intervalRef.current = setInterval(() => {
+      nextSlide();
+    }, 3000); // 3000 milliseconds = 3 seconds
+  };
+
+  const stopAutoPlay = () => {
+    clearInterval(intervalRef.current);
+  };
+
+  useEffect(() => {
+    startAutoPlay();
+
+    return () => {
+      stopAutoPlay();
+    };
+  }, []);
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
-      {values.map((value, index) => (
-        <div key={index} className="bg-white p-6 rounded shadow-md">
-          <h2 className="text-violet-900 text-2xl font-bold mb-4">{value.title}</h2>
-          <p className="text-gray-900">{value.description}</p>
-        </div>
-      ))}
+    <div
+      className="flex items-center justify-center"
+      onMouseEnter={stopAutoPlay}
+      onMouseLeave={startAutoPlay}
+    >
+      <button
+        className=" text-purple-900 px-4 py-2 rounded mr-2 text-5xl"
+        onClick={prevSlide}
+      >
+        <IoIosArrowBack />
+
+      </button>
+      <div className="flex space-x-4">
+        {values.map((value, index) => (
+          <div
+            key={index}
+            className={`p-6 rounded w-[500px] h-[200px] shadow-md ${index === currentSlide ? '' : 'hidden'}`}
+          >
+            <h2 className="text-violet-900 text-2xl font-bold mb-4">{value.title}</h2>
+            <p className="text-gray-900">{value.description}</p>
+          </div>
+        ))}
+      </div>
+      <button
+        className="text-purple-900 px-4 py-2 rounded mr-2 text-5xl"
+        onClick={nextSlide}
+      >
+        <IoIosArrowForward />
+
+      </button>
     </div>
   );
 };

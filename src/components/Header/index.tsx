@@ -55,35 +55,38 @@ const Header = () => {
     <header className={`fixed top-0 w-full z-20 text-violet-950 justify-center h-[80px]
     ${scrollingDown ? 'transition-colors duration-600 bg-black' : ''}`}
     >
-      <nav className="flex justify-between items-center py-1 px-24 md:mx-5 ">
-        <div className="flex items-center gap-5">
+      <nav className="flex justify-between object-center items-center py-1 px-24 md:mx-5 ">
+        <div className="flex items-center gap-5 justify-center object-center">
           <Link href="/">
-            <img
-              className={`object-cover object-center rounded w-[80px] h-[80px]
-               transition-opacity duration-300 ${!scrollingDown ?
-                  "opacity-100" : "opacity-0"
-                } md:opacity-100`}
-              alt="imagem"
-              src="/images/logo2.png"
-            />
+            <h1 className='text-3xl md:text-4xl xl:text-5xl font-bold text-white hover:bg-gradient-to-r
+             from-violet-700 via-purple-600 to-blue-500 via-blue-600 to-blue-500 bg-clip-text 
+             hover:text-transparent hover:scale-125  duration-500 transition-all'
+
+            >InfotecDevs</h1>
           </Link>
           <div className="hidden md:flex gap-10 font-bold border-l-[2px]
            border-violet-950 text-white  text-xl pl-10">
             <Link
               href="/about"
-              className="hover:text-violet-800 hover:scale-125"
+              className="hover:bg-gradient-to-r
+              from-purple-600 via-purple-500 to-blue-500 bg-clip-text 
+              hover:text-transparent hover:scale-125  duration-500 transition-all"
             >
               Sobre
             </Link>
             <Link
               href="/works"
-              className="hover:text-violet-800 hover:scale-125"
+              className="hover:bg-gradient-to-r
+              from-purple-600 via-purple-500 to-blue-500 bg-clip-text 
+              hover:text-transparent hover:scale-125  duration-500 transition-all"
             >
               Projetos
             </Link>
             <Link
               href="/team"
-              className="hover:text-violet-800 hover:scale-125"
+              className="hover:bg-gradient-to-r
+              from-purple-600 via-purple-500 to-blue-500 bg-clip-text 
+              hover:text-transparent hover:scale-125  duration-500 transition-all"
             >
               Nosso Time
             </Link>
@@ -104,7 +107,7 @@ const Header = () => {
             E-mail
           </Link>
         </div>
-        <div className="sm:hidden flex flex-1 justify-end items-center mb-5">
+        <div className="md:hidden flex flex-1 justify-end items-center mb-5">
           {toggle ? (
             <IoClose
               className={`w-[32px] h-[32px] object-contain transition-opacity
@@ -124,36 +127,44 @@ const Header = () => {
           <div
             id="navbar"
             className={`${!toggle ? "hidden" : "flex"
-              } p-6 bg-violet-950 text-white absolute top-20 right-0 mx-4
-               my-2 min-w-[160px] rounded-xl sidebar`}
+              } p-6 bg-black bg-opacity-950 text-white absolute top-14 right-0 
+               my-2 w-full h-[100vh] rounded-xl sidebar`}
           >
-            <div className="list-none flex justify-end items-start flex-1
+            <div className="list-none flex justify-center items-center flex-1
              flex-col gap-1">
               <Link
                 onClick={() => setToggle(false)}
                 href="/about"
-                className="hover:text-black"
+                className="text-4xl py-4 hover:bg-gradient-to-r
+                from-purple-600 via-purple-500 to-blue-500 bg-clip-text 
+                hover:text-transparent hover:scale-125  duration-500 transition-all"
               >
                 Sobre
               </Link>
               <Link
                 onClick={() => setToggle(false)}
                 href="/works"
-                className="hover:text-black"
+                className="text-4xl py-4 hover:bg-gradient-to-r
+                from-purple-600 via-purple-500 to-blue-500 bg-clip-text 
+                hover:text-transparent hover:scale-125  duration-500 transition-all"
               >
                 Projetos
               </Link>
               <Link
                 onClick={() => setToggle(false)}
                 href="/team"
-                className="hover:text-black"
+                className="text-4xl py-4 hover:bg-gradient-to-r
+                from-purple-600 via-purple-500 to-blue-500 bg-clip-text 
+                hover:text-transparent hover:scale-125  duration-500 transition-all"
               >
                 Nosso Time
               </Link>
               <Link
                 onClick={() => setToggle(false)}
                 href="/contact"
-                className="hover:text-black"
+                className="text-4xl py-4 hover:bg-gradient-to-r
+                from-purple-600 via-purple-500 to-blue-500 bg-clip-text 
+                hover:text-transparent hover:scale-125  duration-500 transition-all"
               >
                 Contato
               </Link>
