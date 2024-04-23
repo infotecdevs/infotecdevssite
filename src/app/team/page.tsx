@@ -145,7 +145,6 @@ const page = () => {
           </div>
         </div>
       </section>
-      <Footer />
     </>
   );
 };

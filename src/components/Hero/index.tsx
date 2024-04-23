@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import {
   AiFillInstagram,
@@ -9,23 +9,56 @@ import {
 import Image from "next/image";
 
 const Hero = () => {
-  const numeroDeTelefone = "5511912547271"; // Substitua pelo seu número de telefone
+  const numeroDeTelefone = "TEL";
+  const phrases = ["Sites Inteligentes.", "Sites Responsivos.", "Sites Rápidos."];
 
   const handleClickWhatsapp = () => {
     const url = `https://api.whatsapp.com/send?phone=${numeroDeTelefone}`;
     window.open(url, "_blank");
   };
+
+  const Typewriter = ({ phrases }) => {
+    const [currentPhrase, setCurrentPhrase] = useState(phrases[0]);
+    const [index, setIndex] = useState(0);
+
+    useEffect(() => {
+      const typeNextPhrase = () => {
+        const phrase = phrases[index];
+        let currentCharacter = 0;
+
+        const typeInterval = setInterval(() => {
+          if (currentCharacter <= phrase.length) {
+            setCurrentPhrase(phrase.substring(0, currentCharacter));
+            currentCharacter++;
+          } else {
+            clearInterval(typeInterval);
+            setTimeout(() => {
+              setIndex((prevIndex) => (prevIndex + 1) % phrases.length); // Incrementa e reinicia após a última frase
+            }, 5000); // Tempo de espera após terminar de escrever a frase
+          }
+        }, 100); // Velocidade da digitação
+      };
+
+      typeNextPhrase();
+
+    }, [index, phrases]);
+
+    return (
+      <h1>{currentPhrase}</h1>
+    );
+  };
+
   return (
     <>
-      <div className="relative ">
-        <div className="absolute inset-0 w-full h-full  ">
+      <div className="relative">
+        <div className="absolute inset-0 top-[-10] w-full h-full">
           <video src="/images/4seg.mp4"
             width={1920}
             height={1080}
             autoPlay
             muted
             loop
-            className="w-full h-full object-cover opacity-90"
+            className="w-full h-full object-cover opacity-90 "
           />
         </div>
         <div className="relative grid grid-cols-1 place-items-center h-screen
@@ -36,7 +69,8 @@ const Hero = () => {
                text-white font-bold opacity-100">
                 Aumente suas
                 <br /><span className='text-purple-700 '>vendas </span>
-                com sites inteligentes</h1>
+                <Typewriter phrases={phrases} />
+              </h1>
               <hr className='w-1/2 text-violet-950 border-none bg-violet-950 h-5'></hr>
               <p className="text-3xl  text-white font-bold py-5">
                 Criação de sites, Criação de sites Responsivos,
@@ -53,26 +87,23 @@ const Hero = () => {
         </div>
       </div>
 
-
       <div className=" py-6 sm:py-8 lg:py-12 px-8 sm:px-12 md:px-20 bg-[#f3f3f3] ">
         <div className="">
           <section className="flex flex-col justify-center gap-6 sm:gap-4
            lg:flex-row">
             {/* content - start */}
             <div className="max-w-3xl py-6 px-10 my-10 border rounded-3xl  bg-white flex flex-col items-center justify-center
-               lg:py-12 
-              xl:py-24 ">
+               lg:py-12 xl:py-24 ">
               <h1 className="text-center font-bold text-violet-950 text-2xl
-               sm:text-3xl md:mb-12 xl:text-5xl ">
+               sm:text-3xl mb-4 md:mb-12 xl:text-5xl mt-6">
                 Transforme seu negócio online conosco
               </h1>
-              <div className=" font-semibold mb-8 leading-relaxed 
-              text-violet-gray-900 md:mb-12 lg:w-4/5 xl:text-lg">
+              <div className="font-semibold mb-8 leading-relaxed 
+              text-violet-gray-900 md:mb-12 md:text-lg lg:w-4/5 xl:text-xl">
                 Criamos seu Site e te colocamos no topo do Google Sites
                 estruturados e pensados para a sua empresa. Com um site
                 profissional você garante mais visibilidade, credibilidade e
                 vendas.
-
 
                 <ul className="text-violet-800 py-4">
                   <li>Otimizado para o Google</li>
@@ -89,7 +120,6 @@ const Hero = () => {
                 <div className="hover:text-violet-800 hover:scale-125">
                   <AiFillLinkedin />
                 </div>
-
                 <div
                   onClick={handleClickWhatsapp}
                   className="hover:text-violet-800 hover:scale-125"
@@ -107,14 +137,9 @@ const Hero = () => {
                 className="h-full w-full object-cover object-center border rounded-3xl"
               />
             </div>
-
-
           </section>
-
         </div>
-
       </div>
-
     </>
   );
 };

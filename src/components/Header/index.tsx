@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { MdOutlineMailOutline } from "react-icons/md";
@@ -32,40 +32,30 @@ const Header = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const handleClickOutside = (event: any) => {
-      const navbarElement = document.getElementById("navbar");
-
-      // Verificar se o clique ocorreu fora da div
-      if (navbarElement && !navbarElement.contains(event.target)) {
-        setToggle(false);
-      }
-    };
-
-    // Adicionar event listener global
-    document.addEventListener("mousedown", handleClickOutside);
-
-    // Remover event listener quando o componente for desmontado
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
+  const isScreenMdOrSmaller = () => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    return mediaQuery.matches;
+  };
   return (
-    <header className={`fixed top-0 w-full z-20 text-violet-950 justify-center h-[80px]
-    ${scrollingDown ? 'transition-colors duration-600 bg-black' : ''}`}
+    <header className={`fixed top-0 w-full z-20 justify-center h-[126px] bg-black
+    ${isScreenMdOrSmaller() ? 'bg-black' : ''}
+    ${scrollingDown ? 'transition-colors duration-600 bg-black' : ''}
+    ${toggle ? 'bg-black' : ''}
+    
+    `}
     >
-      <nav className="flex justify-between object-center items-center py-1 px-24 md:mx-5 ">
-        <div className="flex items-center gap-5 justify-center object-center">
+      <nav className="flex items-center justify-between pt-10 px-20 ">
+        <div className="">
           <Link href="/">
-            <h1 className='text-3xl md:text-4xl xl:text-5xl font-bold text-white hover:bg-gradient-to-r
-             from-purple-600 via-purple-500 to-blue-500 bg-clip-text 
-             hover:text-transparent hover:scale-125  duration-500 transition-all'
+            <h1 className=' text-3xl md:text-4xl xl:text-5xl font-bold text-white hover:bg-gradient-to-r
+             from-violet-600 via-blue-500 to-purple-500 bg-clip-text 
+             hover:text-transparent hover:scale-125  duration-500 transition-all '
 
             >InfotecDevs</h1>
           </Link>
-          <div className="hidden md:flex gap-10 font-bold border-l-[2px]
-           border-violet-950 text-white  text-xl pl-10">
+
+          <div className="hidden md:flex gap-10 font-bold border-l-[4px]
+           border-violet-900  text-white  text-xl pl-10 ">
             <Link
               href="/about"
               className="hover:bg-gradient-to-r
@@ -90,9 +80,7 @@ const Header = () => {
             >
               Nosso Time
             </Link>
-            {/* <Link href={"/contact"} className="hover:text-black">
-              Contato
-            </Link> */}
+
           </div>
         </div>
         <div className="flex gap-5">
@@ -107,17 +95,21 @@ const Header = () => {
             E-mail
           </Link>
         </div>
-        <div className="md:hidden flex flex-1 justify-end items-center mb-5">
+        <div className="md:hidden flex mt-4 mr-[-50px]" >
           {toggle ? (
             <IoClose
-              className={`w-[32px] h-[32px] object-contain transition-opacity
-               duration-300 ${scrollingDown ? "opacity-75" : ""
+              className={`w-[32px] h-[32px] text-red-700 object-contain bg-white
+               hover:bg-red-500 transition-all duration-600 z-20 border-none rounded-3xl 
+               hover:scale-110 hover:duration-300 hover:transition-all hover:text-white
+              ${scrollingDown ? "opacity-75" : ""
                 }`}
               onClick={() => setToggle(!toggle)}
             />
           ) : (
+
             <GiHamburgerMenu
-              className={`w-[28px] h-[28px] object-contain transition-opacity
+              className={`z-20 text-white w-[32px] h-[32px] object-contain hover:scale-110
+               hover:text-gray-300 transition-all
                duration-300 ${scrollingDown ? "opacity-75" : ""
                 }`}
               onClick={() => setToggle(!toggle)}
@@ -127,7 +119,7 @@ const Header = () => {
           <div
             id="navbar"
             className={`${!toggle ? "hidden" : "flex"
-              } p-6 bg-black bg-opacity-950 text-white absolute top-14 right-0 
+              } p-6 bg-black bg-opacity-950 text-white absolute top-20 right-0 
                my-2 w-full h-[100vh] rounded-xl sidebar`}
           >
             <div className="list-none flex justify-center items-center flex-1
@@ -168,11 +160,13 @@ const Header = () => {
               >
                 Contato
               </Link>
+
             </div>
           </div>
         </div>
+
       </nav>
-    </header>
+    </header >
   );
 };
 
