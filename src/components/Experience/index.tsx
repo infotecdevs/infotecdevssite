@@ -5,20 +5,22 @@ const Experience = () => {
   const [opacity, setOpacity] = useState(1);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
+    if (typeof window !== 'undefined') {
+      const handleScroll = () => {
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
 
-      const opacityValue = 1 - (scrollPosition / (documentHeight - windowHeight));
-      setOpacity(opacityValue);
-    };
+        const opacityValue = 1 - (scrollPosition / (documentHeight - windowHeight));
+        setOpacity(opacityValue);
+      };
 
-    window.addEventListener("scroll", handleScroll);
+      window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
   }, []);
   return (
     <div className="relative py-14 w-full h-screen overflow-hidden flex flex-col justify-end">
