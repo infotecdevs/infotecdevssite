@@ -33,8 +33,11 @@ const Header = () => {
   }, []);
 
   const isScreenMdOrSmaller = () => {
-    const mediaQuery = window.matchMedia("(max-width: 768px)");
-    return mediaQuery.matches;
+    if (typeof window !== 'undefined') {
+      const mediaQuery = window.matchMedia("(max-width: 768px)");
+      return mediaQuery.matches;
+    }
+
   };
   return (
     <header className={`fixed top-0 w-full z-20 justify-center h-[126px] bg-black
