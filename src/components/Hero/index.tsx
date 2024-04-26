@@ -33,7 +33,7 @@ const Hero = () => {
           } else {
             clearInterval(typeInterval);
             setTimeout(() => {
-              setIndex((prevIndex) => (prevIndex + 1) % phrases.length); // Incrementa e reinicia após a última frase
+              setIndex((prevIndex) => (prevIndex + 1) % phrases.length);
             }, 5000); // Tempo de espera após terminar de escrever a frase
           }
         }, 100); // Velocidade da digitação

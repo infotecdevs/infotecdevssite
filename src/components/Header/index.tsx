@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { useTheme } from "next-themes";
@@ -11,40 +11,10 @@ const Header = () => {
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
   const [toggle, setToggle] = useState(false);
-  const [scrollingDown, setScrollingDown] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrolledDown = window.scrollY > 0;
-      setScrollingDown(scrolledDown);
-      localStorage.setItem("scrollingDown", JSON.stringify(scrolledDown));
-    };
-
-    const savedScrollingDown = localStorage.getItem("scrollingDown");
-    if (savedScrollingDown) {
-      setScrollingDown(JSON.parse(savedScrollingDown));
-    }
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const isScreenMdOrSmaller = () => {
-    if (typeof window !== 'undefined') {
-      const mediaQuery = window.matchMedia("(max-width: 768px)");
-      return mediaQuery.matches;
-    }
-
-  };
   return (
     <header className={`fixed top-0 w-full z-20 justify-center h-[126px] bg-black
-    ${isScreenMdOrSmaller() ? 'bg-black' : ''}
-    ${scrollingDown ? 'transition-colors duration-600 bg-black' : ''}
     ${toggle ? 'bg-black' : ''}
-    
     `}
     >
       <nav className="flex items-center justify-between pt-10 px-20 ">
@@ -104,7 +74,7 @@ const Header = () => {
               className={`w-[32px] h-[32px] text-red-700 object-contain bg-white
                hover:bg-red-500 transition-all duration-600 z-20 border-none rounded-3xl 
                hover:scale-110 hover:duration-300 hover:transition-all hover:text-white
-              ${scrollingDown ? "opacity-75" : ""
+               "opacity-75" : ""
                 }`}
               onClick={() => setToggle(!toggle)}
             />
@@ -113,7 +83,7 @@ const Header = () => {
             <GiHamburgerMenu
               className={`z-20 text-white w-[32px] h-[32px] object-contain hover:scale-110
                hover:text-gray-300 transition-all
-               duration-300 ${scrollingDown ? "opacity-75" : ""
+               duration-300  "opacity-75" : ""
                 }`}
               onClick={() => setToggle(!toggle)}
             />

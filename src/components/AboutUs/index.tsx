@@ -3,8 +3,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 
-
-
 const AboutUs = () => {
   const values = [
     {
@@ -34,7 +32,7 @@ const AboutUs = () => {
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
-  const intervalRef = useRef(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const nextSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide === values.length - 1 ? 0 : prevSlide + 1));
@@ -45,6 +43,10 @@ const AboutUs = () => {
   };
 
   const startAutoPlay = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+
     intervalRef.current = setInterval(() => {
       nextSlide();
     }, 3000); // 3000 milliseconds = 3 seconds
