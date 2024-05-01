@@ -17,7 +17,7 @@ const Hero = () => {
     window.open(url, "_blank");
   };
 
-  const Typewriter = ({ phrases }) => {
+  const Typewriter = ({ phrases }: any) => {
     const [currentPhrase, setCurrentPhrase] = useState(phrases[0]);
     const [index, setIndex] = useState(0);
 
@@ -40,12 +40,9 @@ const Hero = () => {
       };
 
       typeNextPhrase();
-
     }, [index, phrases]);
 
-    return (
-      <h1>{currentPhrase}</h1>
-    );
+    return <p>{currentPhrase}</p>;
   };
 
   return (
