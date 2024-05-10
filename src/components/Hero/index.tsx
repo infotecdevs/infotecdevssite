@@ -68,10 +68,10 @@ const Hero = () => {
          mx-auto bg-black bg-opacity-90"
         >
           <div className=" text-white font-extrabold z-10">
-            <div className="space-y-3 p-10 sm:p-15 md:p-20 xl:pl-[100px] pr-[30px] text-left xl:max-w-[70%]">
+            <div className="space-y-3 px-14 pb-[60px] sm:p-15 md:p-20 xl:pl-[100px] pr-[30px] text-left xl:max-w-[70%]">
               <h1
-                className="text-3xl sm:text-5xl
-               text-white font-bold opacity-100"
+                className="text-3xl sm:text-4xl
+               text-white font-bold opacity-100 "
               >
                 Aumente suas
                 <br />
@@ -79,7 +79,7 @@ const Hero = () => {
                 <Typewriter phrases={phrases} />
               </h1>
               <hr className="w-1/2 text-violet-950 border-none bg-violet-950 h-5"></hr>
-              <ul>
+              <ul className='pb-10'>
                 <li>Sites Inteligentes</li>
                 <li>Sites Responsivos</li>
                 <li>Sites Rápidos</li>
@@ -87,8 +87,8 @@ const Hero = () => {
 
               <button
                 className="uppercase rounded-lg bg-green-700 
-               hover:bg-white hover:text-green-700 duration-500 py-4 px-6
-               text-white text-xl"
+               hover:bg-white hover:text-green-700 duration-500 py-4 px-4
+               text-white text-md"
               >
                 Entre em contato agora mesmo
               </button>
