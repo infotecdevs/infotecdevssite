@@ -70,20 +70,21 @@ const Hero = () => {
           <div className=" text-white font-extrabold z-10">
             <div className="space-y-3 p-10 sm:p-15 md:p-20 xl:pl-[100px] pr-[30px] text-left xl:max-w-[70%]">
               <h1
-                className="text-5xl sm:text-6xl
+                className="text-3xl sm:text-5xl
                text-white font-bold opacity-100"
               >
                 Aumente suas
                 <br />
-                <span className="text-purple-700 ">vendas </span>
+                <span className="text-purple-700 ">vendas com</span>
                 <Typewriter phrases={phrases} />
               </h1>
               <hr className="w-1/2 text-violet-950 border-none bg-violet-950 h-5"></hr>
-              <p className="text-3xl  text-white font-bold py-5">
-                Criação de sites, Criação de sites Responsivos, Criação de sites
-                personalizados, Criação site em WordPress, Agência de criação de
-                site.
-              </p>
+              <ul>
+                <li>Sites Inteligentes</li>
+                <li>Sites Responsivos</li>
+                <li>Sites Rápidos</li>
+              </ul>
+
               <button
                 className="uppercase rounded-lg bg-green-700 
                hover:bg-white hover:text-green-700 duration-500 py-4 px-6
@@ -94,7 +95,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div >
 
       <div className=" py-6 sm:py-8 lg:py-12 px-8 sm:px-12 md:px-20 bg-[#f3f3f3] ">
         <div className="">

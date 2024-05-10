@@ -27,7 +27,7 @@ const page = () => {
                 <img
                   alt="team"
                   className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4"
-                  src="https://dummyimage.com/200x200"
+                  src="/images/members/clecio.jpg" width={200} height={400}
                 />
                 <div className="w-full">
                   <h2 className="title-font font-medium text-lg text-gray-900">
