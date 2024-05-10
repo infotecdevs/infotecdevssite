@@ -53,7 +53,9 @@ const AboutUs = () => {
   };
 
   const stopAutoPlay = () => {
-    clearInterval(intervalRef.current);
+    if (intervalRef.current !== null) {
+      clearInterval(intervalRef.current);
+    }
   };
 
   useEffect(() => {
