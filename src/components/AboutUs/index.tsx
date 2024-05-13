@@ -83,9 +83,9 @@ const AboutUs = () => {
         {values.map((value, index) => (
           <div
             key={index}
-            className={`p-6 rounded w-[500px] h-[200px] shadow-md ${index === currentSlide ? '' : 'hidden'}`}
+            className={`rounded w-[280px] h-[200px] shadow-md ${index === currentSlide ? '' : 'hidden'}`}
           >
-            <h2 className="text-violet-900 text-2xl font-bold mb-4">{value.title}</h2>
+            <h2 className="text-violet-900  text-2xl font-bold mb-4">{value.title}</h2>
             <p className="text-gray-900">{value.description}</p>
           </div>
         ))}

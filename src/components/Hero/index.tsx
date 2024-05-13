@@ -68,10 +68,10 @@ const Hero = () => {
          mx-auto bg-black bg-opacity-90"
         >
           <div className=" text-white font-extrabold z-10">
-            <div className="space-y-3 px-14 pb-[60px] sm:p-15 md:p-20 xl:pl-[100px] pr-[30px] text-left xl:max-w-[70%]">
+            <div className="space-y-3 sm:p-10 md:pl-[-40px]">
               <h1
-                className="text-3xl sm:text-4xl
-               text-white font-bold opacity-100 "
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl
+               text-white  font-bold opacity-100 "
               >
                 Aumente suas
                 <br />
@@ -124,7 +124,7 @@ const Hero = () => {
                 vendas.
                 <ul className="text-violet-800 py-4">
                   <li>Otimizado para o Google</li>
-                  <li>Site pronto em 15 dias</li>
+                  <li>Site pronto em 20 dias</li>
                   <li>Páginas do seu site super rápidas</li>
                 </ul>
               </div>

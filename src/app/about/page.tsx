@@ -17,10 +17,11 @@ const page = () => {
   return (
     <>
 
-      <section id="sobre" className="container mx-auto py-[10rem] px-4">
-        <div className="text-violet-950 text-[32px] font-medium flex items-center gap-2 py-4">
-          Sobre nós
-          <div className="bg-violet-950 h-[2px] w-[40px]"></div>
+      <section id="sobre" className="container px-4 mx-auto py-20 md:py-[14rem] lg:py-[20rem] text-center ">
+        <div className="text-violet-950 font-medium pb-10 md:pb-[14rem] lg:pb-[10rem]">
+          <h2 className='text-3xl md:text-4xl lg:text-5xl'>Sobre nós</h2>
+
+          {/* <hr className="bg-violet-950 h-[4px] w-[60px] position-relative  mx-[12rem] translate-x-[50%]"></hr> */}
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-[60px]">
           <div className="h-full md:h-48 overflow-hidden bg-gray-100 lg:h-auto xl:w-8/12">
@@ -32,56 +33,62 @@ const page = () => {
             />
           </div>
           <div>
-            <div className="flex flex-items justify-between w-[350px]">
+            <div className="flex flex-items justify-between w-[350px] items-center bg-black">
               <div className="flex flex-col gap-4 font-bold text-violet-950">
                 <div className="flex gap-4 items-center">
-                  <AiOutlineGift className="text-[22px]" />
+                  <AiOutlineGift className="text-[20px]" />
                   Fundada
                 </div>
                 <div className="flex gap-4 items-center">
-                  <FiBookOpen className="text-[22px]" />
+                  <FiBookOpen className="text-[20px]" />
                   Estudos
                 </div>
                 <div className="flex gap-4 items-center">
-                  <BsGlobe2 className="text-[22px]" />
+                  <BsGlobe2 className="text-[20px]" />
                   Website
                 </div>
                 <div className="flex gap-4 items-center">
-                  <TbPacman className="text-[22px]" />
+                  <TbPacman className="text-[20px]" />
                   Interesses
                 </div>
                 <div className="flex gap-4 items-center">
-                  <IoLocationOutline className="text-[22px]" />
+                  <IoLocationOutline className="text-[20px]" />
                   Localização
                 </div>
               </div>
               <div className="flex flex-col gap-4 text-gray-600">
-                <div>:</div>
-                <div>:</div>
-                <div>:</div>
-                <div>:</div>
-                <div>:</div>
+                <span>:</span>
+                <span>:</span>
+                <span>:</span>
+                <span>:</span>
+                <span>:</span>
               </div>
               <div className="flex flex-col gap-4 text-gray-800 font-semibold">
                 <div>20.05.2023</div>
                 <div>ADS</div>
-                <div>www.infotecdevs.com.br</div>
                 <div>Web e Mobile</div>
-                <div>Cotia-SP</div>
+                <div>Barueri-SP</div>
+                <div className='text-[14px]'>www.infotecdevs.com.br</div>
               </div>
             </div>
             <div className="max-w-[800px] pt-20">
               <h2 className="font-bold mt-8 mb-4 text-violet-950 text-2xl">
                 Desenvolvedores Frontend e Backend
               </h2>
-              <p className="text-gray-800 text-justify pb-12 font-semibold">
-                Nossa equipe altamente qualificada, sempre atualizada com as
-                últimas tendências e tecnologias, assegura que nossos projetos
-                atendam aos mais altos padrões de qualidade. Seja você um
+              <p className="text-gray-800 text-justify px-2 font-semibold">
+                Nossa equipe é altamente qualificada, sempre está atualizada com as
+                últimas tendências e tecnologias.
+              </p>
+              <p className="text-gray-800 text-justify p-2 font-semibold">
+                Asseguramos que nossos projetos atendam aos mais altos padrões de qualidade. Seja você um
                 pequeno negócio em busca de uma presença online impactante ou
                 uma grande empresa procurando uma plataforma personalizada,
                 estamos prontos para colaborar e transformar sua visão digital
-                em uma realidade impressionante. Como uma startup especializada
+                em uma realidade impressionante.
+              </p>
+
+              <p className="text-gray-800 text-justify p-2 font-semibold">
+                Como uma startup especializada
                 na criação de sites inovadores, convidamos você a se juntar a
                 nós e descobrir como podemos transformar sua ideia em um site ou
                 aplicativo de sucesso, combinando expertise técnica com uma
@@ -117,7 +124,7 @@ const page = () => {
           </p>
         </div>
       </div>
-      <div className="grid grid-cols-1 bg-white py-12 px-[5rem]">
+      <div className="grid grid-cols-1 bg-white py-12 ">
         <div className="flex flex-col items-center font-medium gap-2 text-center">
           <h1 className="text-violet-800 text-3xl font-medium flex items-center gap-2 py-1">
             Valores
