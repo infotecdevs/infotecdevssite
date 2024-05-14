@@ -27,7 +27,7 @@ const Typewriter = ({ phrases }: any) => {
             setIndex((prevIndex) => (prevIndex + 1) % phrases.length);
           }, 5000); // Tempo de espera após terminar de escrever a frase
         }
-      }, 100); // Velocidade da digitação
+      }, 300); // Velocidade da digitação
     };
 
     typeNextPhrase();
@@ -37,11 +37,13 @@ const Typewriter = ({ phrases }: any) => {
 };
 
 const Hero = () => {
+
   const numeroDeTelefone = process.env.TELEFONE;
+
   const phrases = [
-    "Sites Inteligentes.",
-    "Sites Responsivos.",
-    "Sites Rápidos.",
+    " Inteligentes.",
+    " Responsivos.",
+    " Rápidos.",
   ];
 
   const handleClickWhatsapp = () => {
@@ -76,7 +78,8 @@ const Hero = () => {
                 Aumente suas
                 <br />
                 <span className="text-purple-700 ">vendas com</span>
-                <Typewriter phrases={phrases} />
+                <br />
+                <span>Sites <Typewriter phrases={phrases} /></span>
               </h1>
               <hr className="w-1/2 text-violet-950 border-none bg-violet-950 h-5"></hr>
               <ul className='pb-10'>
@@ -97,7 +100,7 @@ const Hero = () => {
         </div>
       </div >
 
-      <div className=" py-6 sm:py-8 lg:py-12 px-8 sm:px-12 md:px-20 bg-[#f3f3f3] ">
+      <div className=" pt-14 pb-24 md:pt-[40px] md:pb-[30px] lg:py-[5rem] px-8 sm:px-12 md:px-20 bg-[#f3f3f3] ">
         <div className="">
           <section
             className="flex flex-col justify-center gap-6 sm:gap-4
@@ -148,7 +151,7 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className=" py-10  overflow-hidden justify-center items-start">
+            <div className="  overflow-hidden justify-center items-start">
               <img
                 src="/images/violet.png"
                 loading="lazy"
