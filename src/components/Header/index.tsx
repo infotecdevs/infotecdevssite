@@ -11,6 +11,11 @@ const Header = () => {
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
   const [toggle, setToggle] = useState(false);
+  const numeroDeTelefone = process.env.TELEFONE;
+  const handleClickWhatsapp = () => {
+    const url = `https://api.whatsapp.com/send?phone=${numeroDeTelefone}`;
+    window.open(url, "_blank");
+  };
 
   return (
     <header className={`fixed top-0 w-full z-20 justify-center h-[126px] bg-black
@@ -45,19 +50,24 @@ const Header = () => {
             >
               Projetos
             </Link>
-            <Link
+            {/* <Link
               href="/team"
               className="hover:bg-gradient-to-r
               from-purple-600 via-purple-500 to-blue-500 bg-clip-text 
               hover:text-transparent hover:scale-125  duration-500 transition-all"
             >
               Nosso Time
-            </Link>
+            </Link> */}
 
           </div>
         </div>
         <div className="flex gap-5">
-          <Link
+          <button className='p-2 bg-white text-black font-semibold rounded-[10px] shadow-md
+           hover:shadow-xl hover:bg-green-500 hover:text-gray-100 transition duration-300 ease-in-out'
+            onClick={handleClickWhatsapp}>
+            Orçamento
+          </button>
+          {/* <Link
             href="/contact"
             className="font-semibold hidden md:flex text-red-500 border
              border-red-500 px-4 py-1
@@ -66,7 +76,7 @@ const Header = () => {
           >
             <MdOutlineMailOutline />
             E-mail
-          </Link>
+          </Link> */}
         </div>
         <div className="md:hidden flex mt-4 mr-[-50px]" >
           {toggle ? (
@@ -115,7 +125,7 @@ const Header = () => {
               >
                 Projetos
               </Link>
-              <Link
+              {/* <Link
                 onClick={() => setToggle(false)}
                 href="/team"
                 className="text-4xl py-4 hover:bg-gradient-to-r
@@ -123,15 +133,19 @@ const Header = () => {
                 hover:text-transparent hover:scale-125  duration-500 transition-all"
               >
                 Nosso Time
-              </Link>
+              </Link> */}
               <Link
-                onClick={() => setToggle(false)}
-                href="/contact"
+                onClick={() => {
+                  setToggle(false);
+                  handleClickWhatsapp();
+                }}
+                href={`https://api.whatsapp.com/send?phone=${numeroDeTelefone}`}
+
                 className="text-4xl py-4 hover:bg-gradient-to-r
                 from-purple-600 via-purple-500 to-blue-500 bg-clip-text 
                 hover:text-transparent hover:scale-125  duration-500 transition-all"
               >
-                Contato
+                Contate-nos
               </Link>
 
             </div>

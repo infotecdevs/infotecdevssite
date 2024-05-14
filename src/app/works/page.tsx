@@ -83,9 +83,10 @@ const worksData = [
 const page = () => {
   return (
     <>
-      <div className="bg-white py-12 sm:py-14 md:py-[12rem] lg:py-[14rem] ">
+      <div className="bg-white py-20 md:py-[14rem] lg:py-[16rem] ">
         <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
-          <h2 className="mb-12 sm:mb-14 md:mb-[5rem] lg:mb-[10rem] text-center text-2xl font-bold text-violet-950 lg:text-3xl">
+          <h2 className="pb-10 md:pb-[10rem] lg:pb-[14rem] text-center
+           text-3xl md:text-4xl lg:text-5xl font-medium text-violet-950">
             Projetos
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
@@ -102,7 +103,7 @@ const page = () => {
           </div>
         </div>
       </div>
-
+      <Footer />
     </>
   );
 };

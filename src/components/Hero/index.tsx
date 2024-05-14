@@ -37,7 +37,7 @@ const Typewriter = ({ phrases }: any) => {
 };
 
 const Hero = () => {
-  const numeroDeTelefone = "TEL";
+  const numeroDeTelefone = process.env.TELEFONE;
   const phrases = [
     "Sites Inteligentes.",
     "Sites Responsivos.",
@@ -88,7 +88,7 @@ const Hero = () => {
               <button
                 className="uppercase rounded-lg bg-green-700 
                hover:bg-white hover:text-green-700 duration-500 py-4 px-4
-               text-white text-md"
+               text-white text-md" onClick={handleClickWhatsapp}
               >
                 Entre em contato agora mesmo
               </button>

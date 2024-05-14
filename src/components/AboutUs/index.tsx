@@ -72,33 +72,32 @@ const AboutUs = () => {
       onMouseEnter={stopAutoPlay}
       onMouseLeave={startAutoPlay}
     >
-      <button
-        className=" text-purple-900 px-4 py-2 rounded mr-2 text-5xl"
+      {/* <button
+        className=" text-purple-900 py-2 ml-6 rounded md:text-5xl"
         onClick={prevSlide}
       >
         <IoIosArrowBack />
+      </button> */}
 
-      </button>
-      <div className="flex space-x-4">
+      <div className="flex items-center space-x-4 justify-center ">
         {values.map((value, index) => (
           <div
             key={index}
-            className={`rounded w-[280px] h-[200px] shadow-md ${index === currentSlide ? '' : 'hidden'}`}
+            className={`rounded w-[70%] h-[260px] shadow-md items-center ${index === currentSlide ? '' : 'hidden'}`}
           >
-            <h2 className="text-violet-900  text-2xl font-bold mb-4">{value.title}</h2>
-            <p className="text-gray-900">{value.description}</p>
+            <h2 className="text-violet-900 text-2xl font-bold pt-16">{value.title}</h2>
+            <p className="text-gray-900 px-2">{value.description}</p>
           </div>
         ))}
       </div>
-      <button
-        className="text-purple-900 px-4 py-2 rounded mr-2 text-5xl"
+      {/* <button
+        className="text-purple-900  py-2 ml-6 rounded  md:text-5xl"
         onClick={nextSlide}
       >
         <IoIosArrowForward />
+      </button> */}
 
-      </button>
     </div>
   );
 };
-
 export default AboutUs;

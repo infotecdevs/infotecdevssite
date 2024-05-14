@@ -17,8 +17,8 @@ const page = () => {
   return (
     <>
 
-      <section id="sobre" className="container px-4 mx-auto py-20 md:py-[14rem] lg:py-[20rem] text-center ">
-        <div className="text-violet-950 font-medium pb-10 md:pb-[14rem] lg:pb-[10rem]">
+      <section id="sobre" className="container px-4 mx-auto py-20 md:py-[14rem] lg:py-[16rem] text-center ">
+        <div className="text-violet-950 font-medium pb-10 md:pb-[8rem] lg:pb-[14rem]">
           <h2 className='text-3xl md:text-4xl lg:text-5xl'>Sobre nós</h2>
 
           {/* <hr className="bg-violet-950 h-[4px] w-[60px] position-relative  mx-[12rem] translate-x-[50%]"></hr> */}
@@ -33,7 +33,7 @@ const page = () => {
             />
           </div>
           <div>
-            <div className="flex flex-items justify-between w-[350px] items-center bg-black">
+            <div className="flex flex-items justify-center  items-center">
               <div className="flex flex-col gap-4 font-bold text-violet-950">
                 <div className="flex gap-4 items-center">
                   <AiOutlineGift className="text-[20px]" />
@@ -56,7 +56,7 @@ const page = () => {
                   Localização
                 </div>
               </div>
-              <div className="flex flex-col gap-4 text-gray-600">
+              <div className="flex flex-col gap-4 text-gray-600 px-6">
                 <span>:</span>
                 <span>:</span>
                 <span>:</span>
@@ -66,9 +66,9 @@ const page = () => {
               <div className="flex flex-col gap-4 text-gray-800 font-semibold">
                 <div>20.05.2023</div>
                 <div>ADS</div>
+                <div className='text-[14px]'>www.infotecdevs.com.br</div>
                 <div>Web e Mobile</div>
                 <div>Barueri-SP</div>
-                <div className='text-[14px]'>www.infotecdevs.com.br</div>
               </div>
             </div>
             <div className="max-w-[800px] pt-20">
@@ -129,7 +129,7 @@ const page = () => {
           <h1 className="text-violet-800 text-3xl font-medium flex items-center gap-2 py-1">
             Valores
           </h1>
-          <span className="text-violet-800 text-6xl gap-2 py-1">
+          <span className="text-violet-800 text-6xl gap-2 py-4">
             <FaHandHoldingHeart />
           </span>
 
