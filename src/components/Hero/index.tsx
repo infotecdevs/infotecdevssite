@@ -84,13 +84,13 @@ const Hero = () => {
               <hr className="w-1/2 text-violet-950 border-none bg-violet-950 h-5"></hr>
               <ul className='pb-10'>
                 <li>Sites Inteligentes</li>
-                <li>Sites Responsivos</li>
-                <li>Sites Rápidos</li>
+                <li>Landing Pages Responsivas</li>
+                <li>E-commerces rápidos</li>
               </ul>
 
               <button
                 className="uppercase rounded-lg bg-green-700 
-               hover:bg-white hover:text-green-700 duration-500 py-4 px-4
+               hover:text-[#f3f3f3] hover:bg-green-500 duration-500 py-4 px-4
                text-white text-md" onClick={handleClickWhatsapp}
               >
                 Entre em contato agora mesmo

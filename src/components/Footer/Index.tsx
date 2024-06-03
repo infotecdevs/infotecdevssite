@@ -40,7 +40,7 @@ const Footer = () => {
       <div className=' bg-violet-950 text-white w-full py-12'>
 
         <div className='grid grid-cols-2 gap-4 items-center'>
-          <div className='flex flex-col align-center justify-center pl-20'>
+          <div className='flex flex-col align-center justify-center'>
             <h3 className='text-2xl font-bold text-white'>Serviços :</h3>
             <ul className='align-center'>
               <li>Criação de Landing Page</li>

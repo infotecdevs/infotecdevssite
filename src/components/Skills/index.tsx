@@ -64,7 +64,7 @@ const Skills = () => {
   return (
     <>
       <span id="about"></span>
-      <div className="pb-20 sm:py-12 sm:pb-12 md:py-20 px-8 sm:px-12 md:px-20 lg:px-[10rem]
+      <div className="pb-[8rem] sm:py-12 sm:pb-[10rem] md:pb-[10rem] md:pt-[8rem] lg:pb-[266px] px-8 sm:px-12 md:px-20 lg:px-[10rem]
        bg-[#f3f3f3]">
         <div className="mx-2 md:mx-5">
           <div className=" grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-2 md:gap-4">
