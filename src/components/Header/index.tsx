@@ -11,7 +11,7 @@ const Header = () => {
   const { systemTheme, theme, setTheme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
   const [toggle, setToggle] = useState(false);
-  const numeroDeTelefone = process.env.TELEFONE;
+  const numeroDeTelefone = process.env.TELEFONE ?? 11972402445;
   const handleClickWhatsapp = () => {
     const url = `https://api.whatsapp.com/send?phone=${numeroDeTelefone}`;
     window.open(url, "_blank");

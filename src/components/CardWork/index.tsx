@@ -22,13 +22,13 @@ const CardWork = ({ link, urlImage, name, short, description }: Props) => {
           />
         </div>
         <div className='flex-1 flex flex-col p-8 '>
-          <span className='font-medium text-gray-800 group-hover:text-violet-500 transition-all'>
+          <span className='font-bold group-hover:text-violet-500 transition-all'>
             {short}
           </span>
-          <span className='mt-2 text-gray-800 line-clamp-4 '>
+          <span className='mt-2 font-semibold text-gray-800 line-clamp-4 '>
             {name}
           </span>
-          <span className='text-gray-800 text-sm font-medium block mt-[30px] truncate group-hover:text-violet-500'>
+          <span className='text-gray-800 text-sm font-medium block mt-[30px] group-hover:text-violet-500'>
             {description}
           </span>
         </div>

@@ -1,44 +1,15 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
+import React from "react";
 import {
   AiFillInstagram,
   AiFillLinkedin,
   AiOutlineWhatsApp,
 } from "react-icons/ai";
-import Image from "next/image";
-
-const Typewriter = ({ phrases }: any) => {
-  const [currentPhrase, setCurrentPhrase] = useState(phrases[0]);
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const typeNextPhrase = () => {
-      const phrase = phrases[index];
-      let currentCharacter = 0;
-
-      const typeInterval = setInterval(() => {
-        if (currentCharacter <= phrase.length) {
-          setCurrentPhrase(phrase.substring(0, currentCharacter));
-          currentCharacter++;
-        } else {
-          clearInterval(typeInterval);
-          setTimeout(() => {
-            setIndex((prevIndex) => (prevIndex + 1) % phrases.length);
-          }, 5000); // Tempo de espera após terminar de escrever a frase
-        }
-      }, 300); // Velocidade da digitação
-    };
-
-    typeNextPhrase();
-  }, [index, phrases]);
-
-  return <p>{currentPhrase}</p>;
-};
+import { Typewriter } from "../TypeWriter";
 
 const Hero = () => {
 
-  const numeroDeTelefone = process.env.TELEFONE;
+  const numeroDeTelefone = process.env.TELEFONE ?? 11972402445;
 
   const phrases = [
     " Inteligentes.",
@@ -69,8 +40,7 @@ const Hero = () => {
           className="relative grid grid-cols-1 place-items-center h-screen
          mx-auto bg-black bg-opacity-90"
         >
-          <div className=" text-white font-extrabold z-10">
-            <div className="space-y-3 sm:p-10 md:pl-[-40px]">
+            <div className="space-y-3 md:pl-[-40px] text-white font-semibold">
               <h1
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl
                text-white  font-bold opacity-100 "
@@ -79,10 +49,13 @@ const Hero = () => {
                 <br />
                 <span className="text-purple-700 ">vendas com</span>
                 <br />
-                <span>Sites <Typewriter phrases={phrases} /></span>
+                <span>
+                  Sites
+                  <Typewriter phrases={phrases} />
+                </span>
               </h1>
               <hr className="w-1/2 text-violet-950 border-none bg-violet-950 h-5"></hr>
-              <ul className='pb-10'>
+              <ul className='pb-4'>
                 <li>Sites Inteligentes</li>
                 <li>Landing Pages Responsivas</li>
                 <li>E-commerces rápidos</li>
@@ -96,7 +69,6 @@ const Hero = () => {
                 Entre em contato agora mesmo
               </button>
             </div>
-          </div>
         </div>
       </div >
 
@@ -106,7 +78,6 @@ const Hero = () => {
             className="flex flex-col justify-center gap-6 sm:gap-4
            lg:flex-row"
           >
-            {/* content - start */}
             <div
               className="max-w-3xl py-6 px-10 my-10 border rounded-3xl  bg-white flex flex-col items-center justify-center
                lg:py-12 xl:py-24 "
@@ -144,7 +115,7 @@ const Hero = () => {
                 </div>
                 <div
                   onClick={handleClickWhatsapp}
-                  className="hover:text-violet-800 hover:scale-125"
+                  className="hover:text-violet-800 hover:scale-125 cursor-pointer"
                 >
                   <AiOutlineWhatsApp />
                 </div>

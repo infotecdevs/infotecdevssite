@@ -1,16 +1,9 @@
-// "use client";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "@/components/Header";
-// import { ThemeProvider } from "next-themes";
 
 const inter = Inter({ subsets: ["latin"] });
-
-// export const metadata = {
-//   title: "InfotecDevs",
-//   description: "Desenvolvimento de sites e sistemas web",
-// };
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://infotecdevs.com.br"),
@@ -37,13 +30,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
+      <head>
+        <title>InfotecDevs</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="favicone.ico" sizes="any" />
+      </head>
       <body className={inter.className}>
-        {/* <ThemeProvider enableSystem={true} attribute="class"> */}
         <main className="h-screen flex flex-col">
           <Header />
-          <div className="flex-1 mt-32 md:mt-0">{children}</div>
+          <div className="flex-1 md:mt-22 pt-24">
+            {children}
+          </div>
         </main>
-        {/* </ThemeProvider> */}
       </body>
     </html>
   );

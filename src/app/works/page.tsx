@@ -63,11 +63,19 @@ const worksData = [
   },
   {
     id: 8,
-    name: "Desenvolvedor Portfólio",
+    name: "Portfólio de Desenvolvedor",
     short: "Landing Page",
-    description: 'Esta é uma Landing Page feita para um tatuador dando enfase em suas habilidaes e seu espaço de trabalho exepcionais',
+    description: 'Esta é uma Landing Page feita para um de nossos desenvolvedores com seus projetos, experiências e habilidades',
     urlImage: "/images/works/rohdev2.png",
     link: "https://portifoliorfs.vercel.app/",
+  },
+  {
+    id: 8,
+    name: "Portfólio de Desenvolvedor",
+    short: "Landing Page",
+    description: 'Esta é uma Landing Page feita para um de nossos desenvolvedores com seus projetos, experiências e habilidades',
+    urlImage: "/images/works/steve_portifolio.png",
+    link: "https://steve.infotecdevs.com.br/",
   },
   {
     id: 9,
